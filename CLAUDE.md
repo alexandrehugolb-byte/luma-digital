@@ -1,4 +1,4 @@
-# MazyOS — Sistema operacional do negócio
+# Luma Digital — rodando no MazyOS
 
 Sua empresa roda em cima desse arquivo. Aqui ficam as regras de operação
 do MazyOS — como o Claude lê o contexto, aprende com correções, mantém
@@ -96,6 +96,71 @@ inteiro, só adicionar ou editar a linha relevante.
 - Mudanças já salvas pelo bloco "Aprender com correções"
 
 **Dica:** rode `/atualizar` pra uma varredura completa quando houver dúvida.
+
+---
+
+# Luma Digital
+
+> Workspace da Luma Digital. Aqui fica a operação da própria agência:
+> identidade, conteúdo, propostas e, futuramente, clientes.
+
+**Estrutura de pastas:**
+- `_memoria/` — quem é a Luma Digital, como falamos, foco atual
+- `identidade/` — marca da Luma Digital (logo, cores, tipografia)
+- `clientes/` — uma subpasta por cliente, criada via `/novo-projeto` (ainda não existe — sem clientes fechados)
+- `marketing/` — conteúdo institucional da própria Luma Digital
+- `saidas/` — documentos pontuais, análises
+- `dados/` — arquivos a analisar (relatórios, exports)
+
+## Sobre a agência
+
+Agência de marketing digital solo, criando sites profissionais pra negócios
+locais — rápido, bonito, acessível. Atende (quando tiver clientes) donos de
+negócio local em Niterói e região: clínicas/consultórios, salões de
+beleza/barbearias, restaurantes/lanchonetes, academias/estúdios.
+
+Serviços principais:
+- Criação de sites profissionais pra negócios locais
+- Presença no Google (GMB / SEO local)
+- Atendimento e fechamento via WhatsApp
+
+Time: 1 pessoa (Alexandre). Fase atual: estruturando a própria marca antes
+de captar clientes.
+
+## Clientes ativos
+
+Nenhum ainda. Quando fechar o primeiro, usar `/novo-projeto` pra criar
+`clientes/<Nome>/`.
+
+## O que mais produzimos aqui
+
+- Site institucional da própria Luma Digital
+- Conteúdo pro Instagram [@lumadigitalbr](https://www.instagram.com/lumadigitalbr/)
+- Propostas comerciais pros primeiros clientes
+
+## Tom de voz
+
+Direto e provocativo — ver `_memoria/preferencias.md` pro detalhe completo.
+Evitar: erros de português, gírias tipo "PPRT", frases soltas sem conexão,
+jargão de guru.
+
+## Regras do sistema
+
+- Cliente novo → `/novo-projeto` cria `clientes/<Nome>/` com briefing e
+  subpastas conforme as entregas contratadas
+- Proposta nova → `propostas/<cliente>-<data>.html` antes de fechar
+- Casos de sucesso ficam em `clientes/<Nome>/caso.md` (reuso em pitches)
+
+## Ferramentas conectadas
+
+- [ ] Notion
+- [ ] Gmail
+- [ ] Google Calendar
+- [ ] Canva
+- [ ] Meta Ads
+- [ ] Google Ads
+
+*(Marcar conforme for instalando os MCPs)*
 
 ---
 

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luma Digital — Sites profissionais para negócios locais</title>
-<meta name="description" content="Criamos sites profissionais para negócios locais. Rápido, bonito, acessível. Atendimento direto pelo WhatsApp.">
-<link rel="icon" href="identidade/logo.svg" type="image/svg+xml">
+<title>Luma Digital — Presença digital para negócios locais</title>
+<meta name="description" content="Sites profissionais e presença no Google para negócios locais. Rápido, sério e acessível. Atendimento direto pelo WhatsApp.">
+<link rel="icon" href="identidade/icone.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body {
-    background:#0a0a0f; color:#fff; font-family:'Inter',sans-serif;
+    background:#EFE7D6; color:#1A1A18; font-family:'Inter',sans-serif;
     line-height:1.5; overflow-x:hidden;
   }
   a { color:inherit; text-decoration:none; }
@@ -23,142 +23,176 @@
   /* ─── glow background ─── */
   .glow {
     position:absolute; inset:0; pointer-events:none; z-index:0;
-    background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.16), transparent 60%);
+    background: radial-gradient(circle at 50% 0%, rgba(193,84,58,0.08), transparent 60%);
   }
 
   /* ─── nav ─── */
   header {
     position:sticky; top:0; z-index:50;
-    background:rgba(10,10,15,0.85); backdrop-filter:blur(10px);
-    border-bottom:1px solid #1a1a2a;
+    background:rgba(239,231,214,0.88); backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(26,26,24,0.1);
   }
-  nav.wrap { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; }
-  .brand { display:flex; align-items:center; gap:10px; font-weight:700; font-size:18px; }
-  .brand img { height:34px; width:auto; }
-  .brand-grad { background:linear-gradient(90deg,#fff,#a78bfa); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  nav .links { display:flex; gap:28px; font-size:14px; color:#aaa; }
-  nav .links a:hover { color:#fff; }
+  nav.wrap { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
+  .brand { display:flex; align-items:center; }
+  .brand img { height:38px; width:auto; }
+  nav .links { display:flex; gap:28px; font-size:14px; color:#6B6459; }
+  nav .links a:hover { color:#1A1A18; }
   .btn {
     display:inline-flex; align-items:center; gap:8px;
-    background:#7c3aed; color:#fff; font-weight:600; font-size:14px;
+    background:#C1543A; color:#FBF6EC; font-weight:600; font-size:14px;
     padding:11px 22px; border-radius:10px; border:none; cursor:pointer;
     transition:background .15s;
   }
-  .btn:hover { background:#6d28d9; }
+  .btn:hover { background:#A8432E; }
   .btn-outline {
-    background:transparent; border:1px solid #7c3aed88; color:#c4b5fd;
+    background:transparent; border:1px solid rgba(26,26,24,0.35); color:#1A1A18;
   }
-  .btn-outline:hover { background:#7c3aed22; }
+  .btn-outline:hover { background:rgba(26,26,24,0.06); }
   @media (max-width:760px){ nav .links{ display:none; } }
 
   /* ─── hero ─── */
   .hero { padding:110px 0 90px; text-align:center; }
   .eyebrow {
     display:inline-block; font-size:11px; letter-spacing:2px; text-transform:uppercase;
-    color:#a78bfa; background:#7c3aed1a; border:1px solid #7c3aed44;
-    padding:6px 14px; border-radius:20px; margin-bottom:28px;
+    color:#A8432E; background:#C1543A14; border:1px solid #C1543A40;
+    padding:6px 14px; border-radius:20px; margin-bottom:28px; font-weight:600;
   }
   h1 { font-size:52px; font-weight:900; letter-spacing:-1px; line-height:1.1; }
-  h1 .grad { background:linear-gradient(90deg,#fff,#a78bfa); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  h1 .accent { color:#C1543A; }
   .hero p.sub {
-    max-width:560px; margin:24px auto 40px; color:#999; font-size:17px;
+    max-width:560px; margin:24px auto 40px; color:#5C5648; font-size:17px;
   }
   .hero .ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
   @media (max-width:600px){ h1{ font-size:36px; } }
 
   /* ─── section headers ─── */
   .section-head { text-align:center; max-width:600px; margin:0 auto 56px; }
-  .section-head .tag { color:#7c3aed; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:600; }
+  .section-head .tag { color:#C1543A; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
   .section-head h2 { font-size:32px; font-weight:700; margin-top:10px; letter-spacing:-0.5px; }
-  .section-head p { color:#888; margin-top:14px; font-size:15px; }
+  .section-head p { color:#6B6459; margin-top:14px; font-size:15px; }
 
   /* ─── grid cards ─── */
   .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
   @media (max-width:820px){ .grid3, .grid2 { grid-template-columns:1fr; } }
   .card {
-    background:#0d0d16; border:1px solid #1a1a2a; border-radius:16px; padding:32px;
+    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:32px;
   }
   .card .icon {
     width:44px; height:44px; border-radius:10px;
-    background:linear-gradient(135deg,#7c3aed33,#a78bfa1a); border:1px solid #7c3aed55;
+    background:#C1543A14; border:1px solid #C1543A33;
     display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:20px;
   }
   .card h3 { font-size:18px; font-weight:600; margin-bottom:10px; }
-  .card p { color:#999; font-size:14px; }
+  .card p { color:#6B6459; font-size:14px; }
 
   /* ─── por que a luma ─── */
-  .why-list { display:flex; flex-direction:column; gap:18px; }
-  .why-item { display:flex; gap:16px; align-items:flex-start; }
-  .why-item .check {
+  .check {
     flex-shrink:0; width:26px; height:26px; border-radius:50%;
-    background:#7c3aed; color:#fff; font-size:13px; font-weight:700;
-    display:flex; align-items:center; justify-content:center; margin-top:2px;
+    background:#C1543A; color:#FBF6EC; font-size:13px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
   }
-  .why-item h4 { font-size:16px; font-weight:600; margin-bottom:4px; }
-  .why-item p { color:#999; font-size:14px; }
 
   /* ─── nichos ─── */
   .nichos { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
   .nicho-pill {
-    background:#0d0d16; border:1px solid #1a1a2a; border-radius:30px;
-    padding:10px 20px; font-size:14px; color:#ccc;
+    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:30px;
+    padding:10px 20px; font-size:14px; color:#5C5648;
   }
-  .nicho-pill b { color:#a78bfa; }
+  .nicho-pill b { color:#A8432E; }
 
   /* ─── prova social ─── */
   .social-card {
-    background:#0d0d16; border:1px solid #1a1a2a; border-radius:20px;
+    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:20px;
     padding:40px; display:flex; align-items:center; justify-content:space-between;
     gap:24px; flex-wrap:wrap;
   }
   .social-left { display:flex; align-items:center; gap:16px; }
   .social-left img { height:40px; width:auto; }
   .social-left .handle { font-weight:700; font-size:17px; }
-  .social-left .meta { color:#888; font-size:13px; margin-top:2px; }
+  .social-left .meta { color:#6B6459; font-size:13px; margin-top:2px; }
   .social-stats { display:flex; gap:32px; }
   .social-stats div { text-align:center; }
-  .social-stats .num { font-size:22px; font-weight:700; color:#a78bfa; }
-  .social-stats .label { font-size:12px; color:#888; }
+  .social-stats .num { font-size:22px; font-weight:700; color:#C1543A; }
+  .social-stats .label { font-size:12px; color:#6B6459; }
 
   /* ─── planos ─── */
   .plan {
-    background:#0d0d16; border:1px solid #1a1a2a; border-radius:16px; padding:32px;
+    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:32px;
     display:flex; flex-direction:column;
   }
-  .plan.featured { border-color:#7c3aed; box-shadow:0 0 0 1px #7c3aed, 0 0 40px #7c3aed22; }
+  .plan.featured { border-color:#C1543A; box-shadow:0 0 0 1px #C1543A, 0 0 40px #C1543A1a; }
   .plan .badge {
     align-self:flex-start; font-size:10px; font-weight:700; letter-spacing:1px;
-    background:#7c3aed; color:#fff; padding:4px 10px; border-radius:6px; margin-bottom:16px;
+    background:#C1543A; color:#FBF6EC; padding:4px 10px; border-radius:6px; margin-bottom:16px;
   }
   .plan h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
-  .plan .desc { color:#999; font-size:14px; margin-bottom:20px; }
+  .plan .desc { color:#6B6459; font-size:14px; margin-bottom:20px; }
   .plan ul { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; flex-grow:1; }
-  .plan li { font-size:14px; color:#ccc; display:flex; gap:10px; }
-  .plan li::before { content:'✓'; color:#a78bfa; font-weight:700; }
-  .plan .price { font-size:13px; color:#888; margin-bottom:16px; }
+  .plan li { font-size:14px; color:#3A362E; display:flex; gap:10px; }
+  .plan li::before { content:'✓'; color:#C1543A; font-weight:700; }
+  .plan .price { font-size:13px; color:#6B6459; margin-bottom:16px; }
 
   /* ─── cta final ─── */
   .cta-final {
-    text-align:center; background:linear-gradient(180deg,#0d0d16,#0a0a0f);
-    border:1px solid #1a1a2a; border-radius:24px; padding:72px 32px;
+    text-align:center; background:linear-gradient(180deg,#F7F2E8,#EFE7D6);
+    border:1px solid rgba(26,26,24,0.08); border-radius:24px; padding:72px 32px;
   }
   .cta-final h2 { font-size:34px; font-weight:800; letter-spacing:-0.5px; }
-  .cta-final p { color:#999; margin:16px 0 32px; font-size:16px; }
+  .cta-final p { color:#6B6459; margin:16px 0 32px; font-size:16px; }
 
   /* ─── footer ─── */
-  footer { border-top:1px solid #1a1a2a; padding:40px 0; }
+  footer { border-top:1px solid rgba(26,26,24,0.1); padding:40px 0; }
   footer .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  footer .brand { font-size:14px; color:#888; }
-  footer .flinks { display:flex; gap:24px; font-size:13px; color:#888; }
-  footer .flinks a:hover { color:#fff; }
+  footer .brand { font-size:14px; color:#6B6459; }
+  footer .flinks { display:flex; gap:24px; font-size:13px; color:#6B6459; }
+  footer .flinks a:hover { color:#1A1A18; }
+
+  /* ─── trust bar ─── */
+  .trust-bar { background:#E9E1D0; border-top:1px solid rgba(26,26,24,0.08); border-bottom:1px solid rgba(26,26,24,0.08); padding:22px 0; }
+  .trust-bar .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:14px 32px; }
+  .trust-item { display:flex; align-items:center; gap:8px; font-size:14px; color:#3A362E; font-weight:600; }
+  .trust-item .dot { width:8px; height:8px; border-radius:50%; background:#C1543A; flex-shrink:0; }
+
+  /* ─── steps (como funciona) ─── */
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  @media (max-width:820px){ .steps{ grid-template-columns:1fr; } }
+  .step { text-align:center; position:relative; }
+  .step .num {
+    width:48px; height:48px; border-radius:50%; background:#C1543A; color:#FBF6EC;
+    font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+  }
+  .step h4 { font-size:15px; font-weight:700; margin-bottom:6px; }
+  .step p { color:#6B6459; font-size:13px; }
+  .step-arrow { position:absolute; top:24px; right:-26px; color:#C1543A66; font-size:20px; }
+  @media (max-width:820px){ .step-arrow{ display:none; } }
+
+  /* ─── depoimentos placeholder ─── */
+  .testi-card { background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px; }
+  .testi-quote { color:#3A362E; font-size:14px; font-style:italic; }
+  .testi-who { display:flex; align-items:center; gap:12px; }
+  .testi-avatar { width:38px; height:38px; border-radius:50%; background:#C1543A22; color:#A8432E; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .testi-name { font-size:13px; font-weight:700; }
+  .testi-role { font-size:12px; color:#6B6459; }
+
+  /* ─── faq ─── */
+  .faq-item { border-bottom:1px solid rgba(26,26,24,0.1); padding:18px 0; }
+  .faq-item summary { cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after { content:'+'; color:#C1543A; font-size:20px; font-weight:700; flex-shrink:0; }
+  .faq-item[open] summary::after { content:'−'; }
+  .faq-item p { color:#6B6459; font-size:14px; margin-top:12px; }
+
+  /* ─── cta repetido ─── */
+  .cta-mid { text-align:center; padding-top:44px; }
 
   /* ─── whatsapp float ─── */
   .wa-float {
     position:fixed; bottom:24px; right:24px; z-index:100;
     width:58px; height:58px; border-radius:50%;
     background:#25D366; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 20px rgba(0,0,0,0.4); font-size:28px;
+    box-shadow:0 4px 20px rgba(26,26,24,0.25); font-size:28px;
   }
 </style>
 </head>
@@ -173,6 +207,7 @@
       <a href="#servicos">Serviços</a>
       <a href="#por-que">Por que a Luma</a>
       <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
       <a href="#contato">Contato</a>
     </div>
     <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -182,15 +217,25 @@
 <section class="hero">
   <div class="glow"></div>
   <div class="wrap" style="position:relative;">
-    <span class="eyebrow">Sites profissionais para negócios locais</span>
-    <h1>Seu negócio existe.<br><span class="grad">Mas seus clientes sabem disso?</span></h1>
-    <p class="sub">A Luma Digital cria o site que faz seu negócio aparecer no Google e passar credibilidade — rápido, bonito e acessível.</p>
+    <span class="eyebrow">Presença digital para negócios locais</span>
+    <h1>Seu negócio existe.<br><span class="accent">Mas seus clientes sabem disso?</span></h1>
+    <p class="sub">A Luma Digital cria o site que faz seu negócio aparecer no Google e passar credibilidade — rápido, sério e acessível.</p>
     <div class="ctas">
-      <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento →</a>
+      <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
       <a class="btn btn-outline" href="https://www.instagram.com/lumadigitalbr/" target="_blank" rel="noopener">Ver Instagram</a>
     </div>
+    <p style="margin-top:20px; font-size:13px; color:#6B6459;">Atendimento 100% remoto — qualquer bairro ou cidade.</p>
   </div>
 </section>
+
+<div class="trust-bar">
+  <div class="wrap">
+    <span class="trust-item"><span class="dot"></span>Sem burocracia</span>
+    <span class="trust-item"><span class="dot"></span>Direto pelo WhatsApp</span>
+    <span class="trust-item"><span class="dot"></span>Preço justo, sem letra miúda</span>
+    <span class="trust-item"><span class="dot"></span>Entrega rápida</span>
+  </div>
+</div>
 
 <section id="servicos">
   <div class="wrap">
@@ -219,41 +264,80 @@
   </div>
 </section>
 
-<section id="por-que" style="background:#07070b;">
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Como funciona</span>
+      <h2>Do primeiro "oi" ao site no ar</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h4>Você manda mensagem</h4>
+        <p>Direto pelo WhatsApp, sem formulário.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h4>Entendemos sua necessidade</h4>
+        <p>Conversamos sobre seu negócio e objetivo.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h4>Enviamos o orçamento</h4>
+        <p>Valor fechado, sem letra miúda.</p>
+        <span class="step-arrow">→</span>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h4>Criamos e entregamos</h4>
+        <p>Site no ar, pronto pra trazer cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="por-que" style="background:#E9E1D0;">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">Por que a Luma</span>
       <h2>Feito pra quem não tem tempo de resolver isso sozinho</h2>
     </div>
-    <div class="grid2">
-      <div class="why-list">
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div><h4>Preço acessível</h4><p>Site profissional sem o preço de agência grande.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div><h4>Entrega rápida</h4><p>Sem projetos que se arrastam por meses.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div><h4>Atendimento direto</h4><p>Fala com quem faz, pelo WhatsApp, do início ao fim.</p></div>
-        </div>
-        <div class="why-item">
-          <div class="check">✓</div>
-          <div><h4>Resultado visível</h4><p>Você não compra tecnologia — compra cliente aparecendo na porta.</p></div>
-        </div>
+    <div class="grid2" style="margin-bottom:20px;">
+      <div class="card">
+        <div class="check" style="margin-bottom:16px;">✓</div>
+        <h3 style="font-size:16px; margin-bottom:6px;">Preço acessível</h3>
+        <p>Site profissional sem o preço de agência grande.</p>
       </div>
-      <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
-        <h3 style="margin-bottom:16px;">Pra quem é</h3>
-        <div class="nichos">
-          <span class="nicho-pill"><b>Clínicas</b> e consultórios</span>
-          <span class="nicho-pill"><b>Salões</b> e barbearias</span>
-          <span class="nicho-pill"><b>Restaurantes</b> e lanchonetes</span>
-          <span class="nicho-pill"><b>Academias</b> e estúdios</span>
-        </div>
-        <p style="color:#888; font-size:13px; margin-top:20px;">Atendimento em Niterói e região.</p>
+      <div class="card">
+        <div class="check" style="margin-bottom:16px;">✓</div>
+        <h3 style="font-size:16px; margin-bottom:6px;">Entrega rápida</h3>
+        <p>Sem projetos que se arrastam por meses.</p>
       </div>
+      <div class="card">
+        <div class="check" style="margin-bottom:16px;">✓</div>
+        <h3 style="font-size:16px; margin-bottom:6px;">Atendimento direto</h3>
+        <p>Fala com quem faz, pelo WhatsApp, do início ao fim.</p>
+      </div>
+      <div class="card">
+        <div class="check" style="margin-bottom:16px;">✓</div>
+        <h3 style="font-size:16px; margin-bottom:6px;">Resultado visível</h3>
+        <p>Você não compra tecnologia — compra cliente aparecendo na porta.</p>
+      </div>
+    </div>
+    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <h3 style="margin-bottom:16px;">Pra quem é</h3>
+      <div class="nichos">
+        <span class="nicho-pill"><b>Clínicas</b> e consultórios</span>
+        <span class="nicho-pill"><b>Salões</b> e barbearias</span>
+        <span class="nicho-pill"><b>Restaurantes</b> e lanchonetes</span>
+        <span class="nicho-pill"><b>Academias</b> e estúdios</span>
+      </div>
+      <p style="color:#6B6459; font-size:13px; margin-top:20px;">Atendimento remoto — qualquer bairro ou cidade.</p>
+    </div>
+    <div class="cta-mid">
+      <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
     </div>
   </div>
 </section>
@@ -266,7 +350,7 @@
     </div>
     <div class="social-card">
       <div class="social-left">
-        <img src="identidade/logo.svg" alt="Luma Digital">
+        <img src="identidade/icone.svg" alt="Luma Digital">
         <div>
           <div class="handle">@lumadigitalbr</div>
           <div class="meta">Marketing Agency</div>
@@ -278,10 +362,39 @@
       </div>
       <a class="btn btn-outline" href="https://www.instagram.com/lumadigitalbr/" target="_blank" rel="noopener">Seguir →</a>
     </div>
+
+    <div class="section-head" style="margin-top:72px;">
+      <span class="tag">Primeiros negócios atendidos pela Luma Digital</span>
+      <h2>Quem já confiou na Luma Digital</h2>
+      <p>Espaço reservado para depoimentos reais — em breve substituídos pelos primeiros clientes atendidos.</p>
+    </div>
+    <div class="grid3">
+      <div class="testi-card">
+        <p class="testi-quote">"Em poucos dias já tínhamos um site sério, sem precisar entender nada de tecnologia."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">CL</div>
+          <div><div class="testi-name">Clínica (exemplo)</div><div class="testi-role">Atendimento remoto</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote">"Atendimento direto pelo WhatsApp fez toda diferença — sem enrolação."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">SB</div>
+          <div><div class="testi-name">Salão de beleza (exemplo)</div><div class="testi-role">Atendimento remoto</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote">"O orçamento foi claro desde o início e a entrega veio no prazo combinado."</p>
+        <div class="testi-who">
+          <div class="testi-avatar">RT</div>
+          <div><div class="testi-name">Restaurante (exemplo)</div><div class="testi-role">Atendimento remoto</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="planos" style="background:#07070b;">
+<section id="planos" style="background:#E9E1D0;">
   <div class="wrap">
     <div class="section-head">
       <span class="tag">Planos</span>
@@ -301,7 +414,7 @@
         <a class="btn btn-outline" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Site%20Essencial." target="_blank" rel="noopener">Solicitar orçamento</a>
       </div>
       <div class="plan featured">
-        <span class="badge">MAIS PROCURADO</span>
+        <span class="badge">MAIS ESCOLHIDO</span>
         <h3>Site Completo</h3>
         <p class="desc">Presença digital completa, com estrutura pra crescer.</p>
         <ul>
@@ -324,6 +437,38 @@
         <a class="btn btn-outline" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Site%20%2B%20Presen%C3%A7a%20Google." target="_blank" rel="noopener">Solicitar orçamento</a>
       </div>
     </div>
+    <div class="cta-mid">
+      <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="tag">Perguntas frequentes</span>
+      <h2>Antes de mandar mensagem</h2>
+    </div>
+    <details class="faq-item">
+      <summary>Quanto tempo demora?</summary>
+      <p>Depende do plano, mas a entrega é rápida — sem projetos que se arrastam por meses.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Preciso entender de tecnologia?</summary>
+      <p>Não. Você fala com quem faz, pelo WhatsApp, e cuida do resto.</p>
+    </details>
+    <details class="faq-item">
+      <summary>O orçamento é fechado antes ou depois?</summary>
+      <p>Antes. Você recebe o valor fechado depois de entendermos sua necessidade — sem surpresa na entrega.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Vocês cuidam do Google Meu Negócio também?</summary>
+      <p>Sim, nos planos que incluem presença no Google — deixamos seu perfil otimizado pra aparecer nas buscas locais.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Atendem qualquer bairro ou cidade?</summary>
+      <p>Sim. O atendimento é 100% remoto pelo WhatsApp — funciona pra negócio local em qualquer lugar do Brasil.</p>
+    </details>
   </div>
 </section>
 

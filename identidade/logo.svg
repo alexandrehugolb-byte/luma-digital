@@ -1,41 +1,23 @@
-<svg width="400" height="120" viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="112" viewBox="0 0 420 112" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="hexGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#a78bfa"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
-    </linearGradient>
-    <linearGradient id="hexFill" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.1"/>
-    </linearGradient>
-    <linearGradient id="textGrad" x1="140" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
-    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C1543A" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#C1543A" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#C1543A" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="400" height="120" fill="#0a0a0f" rx="16"/>
+  <!-- Farol -->
+  <g transform="translate(2,4) scale(1.24)">
+    <circle cx="30" cy="25" r="8" fill="url(#glow)"/>
+    <path d="M15 82 L21 72 L39 72 L45 82 Z" fill="none" stroke="#1A1A18" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M21 72 C21.5 58 23 44 24 33 L36 33 C37 44 38.5 58 39 72 Z" fill="none" stroke="#1A1A18" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M24 33 L24 20 L30 12 L36 20 L36 33 Z" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="30" y1="20" x2="30" y2="33" stroke="#1A1A18" stroke-width="1.4"/>
+    <circle cx="30" cy="25" r="2" fill="#C1543A"/>
+  </g>
 
-  <!-- Hexagon -->
-  <polygon points="60,8 95,27 95,65 60,84 25,65 25,27" fill="url(#hexFill)" stroke="url(#hexGrad)" stroke-width="2"/>
-
-  <!-- L shape -->
-  <path d="M46 30 L46 62 L74 62" stroke="url(#hexGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Accent dot -->
-  <circle cx="74" cy="62" r="4" fill="#a78bfa"/>
-
-  <!-- Light rays -->
-  <line x1="46" y1="30" x2="36" y2="20" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.5" stroke-linecap="round"/>
-  <line x1="46" y1="30" x2="33" y2="30" stroke="#a78bfa" stroke-width="1.5" stroke-opacity="0.3" stroke-linecap="round"/>
-
-  <!-- Luma -->
-  <text x="116" y="58" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="-0.5" fill="url(#textGrad)">Luma</text>
-
-  <!-- Digital -->
-  <text x="116" y="84" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="400" letter-spacing="6" fill="#7c3aed">DIGITAL</text>
-
-  <!-- Tagline -->
-  <text x="116" y="102" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" letter-spacing="2" fill="#555555">PRESENÇA · RESULTADO</text>
+  <!-- Wordmark -->
+  <text x="106" y="76" font-family="Georgia, 'Palatino Linotype', 'Book Antiqua', serif" font-size="64" font-weight="700" letter-spacing="-0.5" fill="#1A1A18">Luma</text>
+  <text x="107" y="98" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="4" fill="#8A8072">DIGITAL</text>
 </svg>

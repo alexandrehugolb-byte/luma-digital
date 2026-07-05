@@ -116,16 +116,17 @@ inteiro, só adicionar ou editar a linha relevante.
 
 Agência de marketing digital solo, criando sites profissionais pra negócios
 locais — rápido, bonito, acessível. Atende (quando tiver clientes) donos de
-negócio local em Niterói e região: clínicas/consultórios, salões de
-beleza/barbearias, restaurantes/lanchonetes, academias/estúdios.
+negócio local em qualquer bairro ou cidade, via atendimento 100% remoto:
+clínicas/consultórios, salões de beleza/barbearias, restaurantes/lanchonetes,
+academias/estúdios.
 
 Serviços principais:
 - Criação de sites profissionais pra negócios locais
 - Presença no Google (GMB / SEO local)
 - Atendimento e fechamento via WhatsApp
 
-Time: 1 pessoa (Alexandre). Fase atual: estruturando a própria marca antes
-de captar clientes.
+Time: 1 pessoa (Alexandre). Fase atual: site institucional próprio já criado
+(`index.html`) — foco agora é publicar o site e captar os primeiros clientes.
 
 ## Clientes ativos
 

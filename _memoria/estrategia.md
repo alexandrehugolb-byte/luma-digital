@@ -6,15 +6,17 @@
 
 ## Fase
 
-Negócio recém-criado. Ainda não tem site próprio nem clientes fechados.
+Site institucional da própria Luma Digital criado (`index.html`, 2026-07-04). Ainda sem clientes fechados.
 
 ## Prioridade principal
 
-Criar o site da própria Luma Digital pra ter presença digital antes de vender pros outros.
+Publicar o site no ar (domínio/hospedagem) e começar a captar os primeiros clientes. Nichos-alvo já mapeados: clínicas/consultórios, salões/barbearias, restaurantes, academias — atendimento remoto, sem foco em uma região específica.
 
 ## O que pode esperar
 
-Buscar os primeiros clientes — só depois do site próprio no ar. Nichos-alvo já mapeados: clínicas/consultórios, salões/barbearias, restaurantes, academias em Niterói.
+Implementação de IA e agentes de IA pra empresas — roadmap futuro confirmado pelo Alexandre, mas só depois de publicar o site e ter os primeiros clientes rodando. Não é prioridade agora.
+
+Nada mais represado no momento — site próprio pronto, prioridade agora é ir atrás dos primeiros clientes.
 
 ## Contexto com prazo
 

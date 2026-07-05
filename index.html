@@ -7,192 +7,377 @@
 <meta name="description" content="Sites profissionais e presença no Google para negócios locais. Rápido, sério e acessível. Atendimento direto pelo WhatsApp.">
 <link rel="icon" href="identidade/icone.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
+
+  :root {
+    --black:#0A0908;
+    --graphite:#17130E;
+    --graphite-2:#211A12;
+    --ivory:#F3ECDD;
+    --ivory-alt:#ECE1CB;
+    --card-light:#FBF7EE;
+    --ink:#17130F;
+    --ink-soft:#6E6656;
+    --warm-white:#F5F0E6;
+    --text-soft:#BAAF9C;
+    --text-soft-2:#877D6B;
+    --amber-bright:#F0B168;
+    --amber:#D9714F;
+    --amber-deep:#C1543A;
+    --amber-copper:#93502A;
+    --line-dark:rgba(245,240,230,.1);
+    --line-light:rgba(23,19,15,.1);
+  }
+
   body {
-    background:#EFE7D6; color:#1A1A18; font-family:'Inter',sans-serif;
-    line-height:1.5; overflow-x:hidden;
+    background:var(--ivory); color:var(--ink); font-family:'Inter',sans-serif;
+    line-height:1.55; overflow-x:hidden;
   }
   a { color:inherit; text-decoration:none; }
-  img { max-width:100%; display:block; }
-  .wrap { max-width:1100px; margin:0 auto; padding:0 24px; }
-  section { padding:96px 0; position:relative; }
+  img, svg { max-width:100%; display:block; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 28px; }
+  section { padding:120px 0; position:relative; }
+  @media (max-width:760px){ section{ padding:80px 0; } }
 
-  /* ─── glow background ─── */
-  .glow {
-    position:absolute; inset:0; pointer-events:none; z-index:0;
-    background: radial-gradient(circle at 50% 0%, rgba(193,84,58,0.08), transparent 60%);
-  }
-
-  /* ─── nav ─── */
+  /* ─── header ─── */
   header {
     position:sticky; top:0; z-index:50;
-    background:rgba(239,231,214,0.88); backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(26,26,24,0.1);
+    background:rgba(10,9,8,0.62); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-dark);
   }
-  nav.wrap { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
-  .brand { display:flex; align-items:center; }
-  .brand img { height:38px; width:auto; }
-  nav .links { display:flex; gap:28px; font-size:14px; color:#6B6459; }
-  nav .links a:hover { color:#1A1A18; }
+  nav.wrap { display:flex; align-items:center; justify-content:space-between; padding:18px 28px; }
+  .wordmark { display:flex; align-items:baseline; gap:9px; }
+  .wordmark .main { font-family:'Fraunces',serif; font-weight:600; font-size:23px; color:var(--warm-white); letter-spacing:-.2px; }
+  .wordmark .sub { font-family:'Inter',sans-serif; font-weight:600; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text-soft); }
+  nav .links { display:flex; gap:36px; font-size:14px; color:var(--text-soft); }
+  nav .links a { position:relative; padding-bottom:5px; transition:color .3s ease; }
+  nav .links a::after {
+    content:''; position:absolute; left:50%; right:50%; bottom:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--amber-bright), transparent);
+    transition:left .4s cubic-bezier(.4,0,.2,1), right .4s cubic-bezier(.4,0,.2,1);
+  }
+  nav .links a:hover { color:var(--warm-white); }
+  nav .links a:hover::after { left:0; right:0; }
+  @media (max-width:820px){ nav .links{ display:none; } }
+
+  /* ─── buttons ─── */
   .btn {
     display:inline-flex; align-items:center; gap:8px;
-    background:#C1543A; color:#FBF6EC; font-weight:600; font-size:14px;
-    padding:11px 22px; border-radius:10px; border:none; cursor:pointer;
-    transition:background .15s;
+    background:linear-gradient(155deg, #D98A4F 0%, #B5652E 55%, var(--amber-copper) 100%);
+    color:#FBF3E7; font-weight:600; font-size:14px;
+    padding:12px 23px; border-radius:11px; border:none; cursor:pointer;
+    box-shadow:0 1px 0 rgba(255,255,255,.22) inset, 0 8px 18px rgba(0,0,0,.28);
+    transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
   }
-  .btn:hover { background:#A8432E; }
+  .btn:hover { transform:translateY(-1px); filter:brightness(1.08); box-shadow:0 1px 0 rgba(255,255,255,.28) inset, 0 10px 26px rgba(193,84,58,.35), 0 0 0 1px rgba(217,113,79,.25); }
+  .btn-sm { padding:10px 19px; font-size:13.5px; }
   .btn-outline {
-    background:transparent; border:1px solid rgba(26,26,24,0.35); color:#1A1A18;
+    background:transparent; border:1px solid var(--line-light); color:var(--ink); box-shadow:none;
   }
-  .btn-outline:hover { background:rgba(26,26,24,0.06); }
-  @media (max-width:760px){ nav .links{ display:none; } }
+  .btn-outline:hover { background:rgba(23,19,15,.05); transform:none; filter:none; box-shadow:none; }
+  .btn-outline-dark {
+    background:transparent; border:1px solid rgba(245,240,230,.28); color:var(--warm-white); box-shadow:none;
+  }
+  .btn-outline-dark:hover { background:rgba(245,240,230,.06); border-color:rgba(240,177,104,.5); transform:none; filter:none; box-shadow:none; }
 
   /* ─── hero ─── */
-  .hero { padding:110px 0 90px; text-align:center; }
-  .eyebrow {
+  .hero-dark {
+    position:relative; overflow:hidden; min-height:94vh;
+    display:flex; align-items:center;
+    background: radial-gradient(ellipse 90% 65% at 50% 8%, #1C170F 0%, var(--black) 60%, #050403 100%);
+    padding:70px 0 64px;
+  }
+  .fog {
+    position:absolute; left:0; right:0; top:52%; height:42%; z-index:1; pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(186,175,156,.05) 45%, rgba(217,113,79,.05) 62%, transparent);
+    filter:blur(28px);
+  }
+  .stars {
+    position:absolute; inset:0; z-index:1; opacity:.5; pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(245,240,230,.7), transparent),
+      radial-gradient(1px 1px at 34% 62%, rgba(245,240,230,.45), transparent),
+      radial-gradient(1.2px 1.2px at 61% 12%, rgba(245,240,230,.55), transparent),
+      radial-gradient(1px 1px at 81% 40%, rgba(245,240,230,.4), transparent),
+      radial-gradient(1.2px 1.2px at 91% 74%, rgba(245,240,230,.5), transparent),
+      radial-gradient(1px 1px at 23% 82%, rgba(245,240,230,.35), transparent),
+      radial-gradient(1px 1px at 48% 32%, rgba(245,240,230,.3), transparent),
+      radial-gradient(1px 1px at 70% 88%, rgba(245,240,230,.35), transparent);
+    background-repeat:no-repeat;
+    animation:starTwinkle 9s ease-in-out infinite;
+  }
+  @keyframes starTwinkle { 0%,100%{ opacity:.38; } 50%{ opacity:.58; } }
+  .farol-scene { position:absolute; inset:0; z-index:2; pointer-events:none; }
+  .horizon {
+    position:absolute; left:0; right:0; top:76%; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(245,240,230,.14), transparent);
+  }
+  .farol-wrap {
+    position:absolute; bottom:9%; left:50%; transform:translateX(-50%);
+    width:clamp(160px,18vw,250px); aspect-ratio:60/84;
+  }
+  .farol-svg { width:100%; height:100%; display:block; position:relative; z-index:6; filter:drop-shadow(0 10px 26px rgba(0,0,0,.6)); }
+  .lamp-glow {
+    position:absolute; left:50%; top:29.76%; width:16%; aspect-ratio:1/1;
+    transform:translate(-50%,-50%); border-radius:50%; z-index:5;
+    background:radial-gradient(circle, rgba(255,236,204,.95), rgba(240,177,104,.35) 45%, transparent 72%);
+    filter:blur(2px); animation:lampPulse 4s ease-in-out infinite;
+  }
+  @keyframes lampPulse {
+    0%,100% { opacity:.8; transform:translate(-50%,-50%) scale(1); }
+    50% { opacity:1; transform:translate(-50%,-50%) scale(1.1); }
+  }
+  .beam-glow {
+    position:absolute; left:50%; top:29.76%; transform:translate(-50%,-50%);
+    width:clamp(380px,58vw,860px); aspect-ratio:1/1; z-index:1; pointer-events:none;
+    background:radial-gradient(circle, rgba(240,177,104,.4) 0%, rgba(217,113,79,.16) 34%, rgba(217,113,79,.05) 58%, transparent 76%);
+    filter:blur(6px);
+  }
+  .cursor-halo {
+    position:absolute; left:50%; top:29.76%; transform:translate(-50%,-50%);
+    width:clamp(300px,44vw,620px); aspect-ratio:1/1; border-radius:50%; z-index:1; pointer-events:none;
+    background:radial-gradient(circle, rgba(240,177,104,.42), transparent 68%);
+    filter:blur(14px); opacity:0; transition:opacity .6s ease;
+  }
+  .beam-rays {
+    position:absolute; left:50%; top:29.76%; transform:translate(-50%,-50%);
+    width:clamp(280px,40vw,600px); aspect-ratio:1/1; z-index:2; pointer-events:none;
+    background:repeating-conic-gradient(from 0deg, rgba(240,177,104,.14) 0deg 1.5deg, transparent 1.5deg 15deg);
+    -webkit-mask-image:radial-gradient(circle, rgba(0,0,0,.7) 0%, transparent 60%);
+    mask-image:radial-gradient(circle, rgba(0,0,0,.7) 0%, transparent 60%);
+    filter:blur(1px); mix-blend-mode:screen;
+  }
+  .beam-sweep {
+    position:absolute; left:50%; top:29.76%; transform:translate(-50%,-50%);
+    width:clamp(460px,68vw,1080px); aspect-ratio:1/1; z-index:3; pointer-events:none;
+    background:conic-gradient(from 0deg,
+      rgba(255,236,204,.85) 0deg, rgba(240,177,104,.4) 10deg, rgba(217,113,79,.14) 26deg, rgba(217,113,79,.04) 42deg, transparent 60deg,
+      transparent 180deg,
+      rgba(255,236,204,.85) 180deg, rgba(240,177,104,.4) 190deg, rgba(217,113,79,.14) 206deg, rgba(217,113,79,.04) 222deg, transparent 240deg,
+      transparent 360deg);
+    -webkit-mask-image:radial-gradient(circle, rgba(0,0,0,.95) 7%, transparent 72%);
+    mask-image:radial-gradient(circle, rgba(0,0,0,.95) 7%, transparent 72%);
+    filter:blur(2px); mix-blend-mode:screen;
+    animation:beamSpin 20s linear infinite;
+  }
+  @keyframes beamSpin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+  .hero-content { position:relative; z-index:10; text-align:center; }
+  .eyebrow-dark {
     display:inline-block; font-size:11px; letter-spacing:2px; text-transform:uppercase;
-    color:#A8432E; background:#C1543A14; border:1px solid #C1543A40;
-    padding:6px 14px; border-radius:20px; margin-bottom:28px; font-weight:600;
+    color:var(--amber-bright); background:rgba(193,84,58,.12); border:1px solid rgba(240,177,104,.3);
+    padding:7px 16px; border-radius:20px; margin-bottom:30px; font-weight:600;
   }
-  h1 { font-size:52px; font-weight:900; letter-spacing:-1px; line-height:1.1; }
-  h1 .accent { color:#C1543A; }
-  .hero p.sub {
-    max-width:560px; margin:24px auto 40px; color:#5C5648; font-size:17px;
+  .h1-dark {
+    font-family:'Fraunces',serif; font-size:clamp(34px,5.4vw,60px); font-weight:700;
+    letter-spacing:-1px; line-height:1.14; color:var(--warm-white); text-wrap:balance;
   }
-  .hero .ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-  @media (max-width:600px){ h1{ font-size:36px; } }
+  .h1-dark .accent-light { color:var(--amber-bright); font-style:italic; }
+  .sub-dark { max-width:520px; margin:28px auto 42px; color:var(--text-soft); font-size:17px; }
+  .hero-content .ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .hero-note { margin-top:22px; font-size:13px; color:var(--text-soft-2); }
 
   /* ─── section headers ─── */
-  .section-head { text-align:center; max-width:600px; margin:0 auto 56px; }
-  .section-head .tag { color:#C1543A; font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
-  .section-head h2 { font-size:32px; font-weight:700; margin-top:10px; letter-spacing:-0.5px; }
-  .section-head p { color:#6B6459; margin-top:14px; font-size:15px; }
+  .section-head { text-align:center; max-width:620px; margin:0 auto 64px; }
+  .section-head .tag { color:var(--amber-deep); font-size:12px; letter-spacing:2.5px; text-transform:uppercase; font-weight:700; }
+  .section-head h2 { font-family:'Fraunces',serif; font-size:clamp(26px,3.4vw,38px); font-weight:600; margin-top:14px; letter-spacing:-.5px; text-wrap:balance; }
+  .section-head p { color:var(--ink-soft); margin-top:16px; font-size:15.5px; }
+  .section-head.on-dark h2 { color:var(--warm-white); }
+  .section-head.on-dark p { color:var(--text-soft); }
+  .section-head.on-dark .tag { color:var(--amber-bright); }
 
   /* ─── grid cards ─── */
-  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-  .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .grid2 { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
   @media (max-width:820px){ .grid3, .grid2 { grid-template-columns:1fr; } }
   .card {
-    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:32px;
+    background:var(--card-light); border:1px solid var(--line-light); border-radius:18px; padding:38px;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease, box-shadow .35s ease;
   }
+  .card:hover { transform:translateY(-4px); border-color:rgba(217,113,79,.35); box-shadow:0 16px 40px rgba(23,19,15,.08), 0 0 0 1px rgba(217,113,79,.08); }
   .card .icon {
-    width:44px; height:44px; border-radius:10px;
-    background:#C1543A14; border:1px solid #C1543A33;
-    display:flex; align-items:center; justify-content:center; font-size:20px; margin-bottom:20px;
+    width:48px; height:48px; border-radius:12px;
+    background:rgba(193,84,58,.08); border:1px solid rgba(193,84,58,.22); color:var(--amber-copper);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px;
   }
-  .card h3 { font-size:18px; font-weight:600; margin-bottom:10px; }
-  .card p { color:#6B6459; font-size:14px; }
+  .card .icon svg { width:22px; height:22px; }
+  .card h3 { font-size:18.5px; font-weight:700; margin-bottom:11px; letter-spacing:-.2px; }
+  .card p { color:var(--ink-soft); font-size:14.5px; }
 
-  /* ─── por que a luma ─── */
-  .check {
-    flex-shrink:0; width:26px; height:26px; border-radius:50%;
-    background:#C1543A; color:#FBF6EC; font-size:13px; font-weight:700;
-    display:flex; align-items:center; justify-content:center;
-  }
+  /* ─── diferenciais ─── */
+  .diff-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-light); }
+  .diff-block { padding:44px 32px; border-right:1px solid var(--line-light); border-bottom:1px solid var(--line-light); }
+  .diff-block:last-child { border-right:none; }
+  .diff-num { font-family:'Fraunces',serif; font-size:15px; color:var(--amber-deep); font-weight:700; letter-spacing:1px; margin-bottom:20px; }
+  .diff-block h3 { font-size:21px; font-weight:700; letter-spacing:-.3px; margin-bottom:13px; }
+  .diff-block p { color:var(--ink-soft); font-size:14.5px; }
+  @media (max-width:820px){ .diff-grid{ grid-template-columns:1fr; } .diff-block{ border-right:none; } }
 
-  /* ─── nichos ─── */
-  .nichos { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
-  .nicho-pill {
-    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:30px;
-    padding:10px 20px; font-size:14px; color:#5C5648;
+  /* ─── metodologia (escura) ─── */
+  .metodologia-dark { background:var(--graphite); }
+  .metodologia-quote {
+    font-family:'Fraunces',serif; font-size:clamp(24px,3.4vw,40px); font-weight:600; letter-spacing:-.5px;
+    text-align:center; max-width:780px; margin:0 auto 30px; line-height:1.3; color:var(--warm-white); text-wrap:balance;
   }
-  .nicho-pill b { color:#A8432E; }
+  .metodologia-quote .accent { color:var(--amber-bright); font-style:italic; }
+  .metodologia-sub { text-align:center; color:var(--text-soft); max-width:520px; margin:0 auto 76px; font-size:15.5px; }
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; }
+  .steps::before {
+    content:''; position:absolute; top:24px; left:12%; right:12%; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(240,177,104,.28), rgba(240,177,104,.28), transparent);
+  }
+  @media (max-width:820px){ .steps{ grid-template-columns:1fr; } .steps::before{ display:none; } }
+  .step { text-align:center; position:relative; }
+  .step .num {
+    width:48px; height:48px; border-radius:50%; background:var(--graphite); border:1.5px solid rgba(240,177,104,.55);
+    color:var(--amber-bright); font-family:'Fraunces',serif;
+    font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center;
+    margin:0 auto 20px; position:relative; z-index:1;
+  }
+  .step h4 { font-size:15.5px; font-weight:700; margin-bottom:8px; color:var(--warm-white); }
+  .step p { color:var(--text-soft); font-size:13.5px; }
+
+  /* ─── nichos / projetos ─── */
+  .nicho-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:26px; }
+  @media (max-width:760px){ .nicho-grid{ grid-template-columns:1fr; } }
+  .nicho-card {
+    position:relative; border-radius:20px; overflow:hidden; aspect-ratio:16/10;
+    background:linear-gradient(150deg,#241D14,#100D09 70%);
+    display:flex; align-items:flex-end; padding:30px; isolation:isolate;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  }
+  .nicho-card::before {
+    content:''; position:absolute; inset:0; z-index:0; transition:opacity .5s ease;
+    background:radial-gradient(circle at 26% 18%, rgba(240,177,104,.24), transparent 60%);
+  }
+  .nicho-card::after {
+    content:''; position:absolute; inset:0; z-index:0; background:rgba(4,3,2,0); transition:background .45s ease;
+  }
+  .nicho-card:hover { transform:translateY(-3px); }
+  .nicho-card:hover::after { background:rgba(4,3,2,.28); }
+  .nicho-card .nc-inner { position:relative; z-index:1; display:flex; flex-direction:column; width:100%; }
+  .nicho-card .nc-top { display:flex; justify-content:space-between; align-items:flex-start; }
+  .nicho-card .nc-tag { color:var(--text-soft); font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; opacity:0; transform:translateY(6px); transition:opacity .4s ease, transform .4s ease; }
+  .nicho-card .nc-arrow { width:34px; height:34px; border-radius:50%; border:1px solid rgba(245,240,230,.3); color:var(--warm-white); display:flex; align-items:center; justify-content:center; opacity:0; transform:translate(-6px,6px); transition:opacity .4s ease, transform .4s ease; }
+  .nicho-card .nc-arrow svg { width:15px; height:15px; }
+  .nicho-card:hover .nc-tag, .nicho-card:hover .nc-arrow, .nicho-card:focus-within .nc-tag, .nicho-card:focus-within .nc-arrow { opacity:1; transform:translate(0,0); }
+  .nicho-card .nc-title { color:var(--warm-white); font-size:21px; font-weight:700; margin-top:auto; }
+  .nicho-card .nc-reveal {
+    color:var(--amber-bright); font-size:13.5px; font-weight:500; max-height:0; opacity:0; overflow:hidden;
+    transition:max-height .4s ease, opacity .4s ease, margin-top .4s ease; margin-top:0;
+  }
+  .nicho-card:hover .nc-reveal, .nicho-card:focus-within .nc-reveal { max-height:60px; opacity:1; margin-top:8px; }
 
   /* ─── prova social ─── */
   .social-card {
-    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:20px;
+    background:var(--card-light); border:1px solid var(--line-light); border-radius:20px;
     padding:40px; display:flex; align-items:center; justify-content:space-between;
     gap:24px; flex-wrap:wrap;
   }
   .social-left { display:flex; align-items:center; gap:16px; }
   .social-left img { height:40px; width:auto; }
   .social-left .handle { font-weight:700; font-size:17px; }
-  .social-left .meta { color:#6B6459; font-size:13px; margin-top:2px; }
+  .social-left .meta { color:var(--ink-soft); font-size:13px; margin-top:2px; }
   .social-stats { display:flex; gap:32px; }
   .social-stats div { text-align:center; }
-  .social-stats .num { font-size:22px; font-weight:700; color:#C1543A; }
-  .social-stats .label { font-size:12px; color:#6B6459; }
+  .social-stats .num { font-size:22px; font-weight:700; color:var(--amber-deep); }
+  .social-stats .label { font-size:12px; color:var(--ink-soft); }
+
+  /* ─── depoimentos ─── */
+  .testi-card {
+    background:var(--card-light); border:1px solid var(--line-light); border-radius:18px; padding:34px 30px;
+    display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease;
+  }
+  .testi-card:hover { transform:translateY(-4px); border-color:rgba(217,113,79,.3); }
+  .testi-card::before {
+    content:'“'; position:absolute; top:6px; left:18px; font-family:'Fraunces',serif; font-size:76px;
+    color:var(--amber-deep); opacity:.12; line-height:1;
+  }
+  .testi-quote { color:var(--ink); font-size:14.5px; font-style:italic; position:relative; z-index:1; }
+  .testi-who { display:flex; align-items:center; gap:12px; }
+  .testi-avatar { width:38px; height:38px; border-radius:50%; background:rgba(193,84,58,.13); color:var(--amber-copper); font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .testi-name { font-size:13px; font-weight:700; }
+  .testi-role { font-size:12px; color:var(--ink-soft); }
 
   /* ─── planos ─── */
   .plan {
-    background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:32px;
+    background:var(--card-light); border:1px solid var(--line-light); border-radius:18px; padding:36px;
     display:flex; flex-direction:column;
   }
-  .plan.featured { border-color:#C1543A; box-shadow:0 0 0 1px #C1543A, 0 0 40px #C1543A1a; }
+  .plan.featured { border-color:var(--amber-deep); box-shadow:0 0 0 1px var(--amber-deep), 0 20px 50px rgba(193,84,58,.12); }
   .plan .badge {
     align-self:flex-start; font-size:10px; font-weight:700; letter-spacing:1px;
-    background:#C1543A; color:#FBF6EC; padding:4px 10px; border-radius:6px; margin-bottom:16px;
+    background:linear-gradient(155deg,#D98A4F,#B5652E); color:#FBF3E7; padding:5px 11px; border-radius:6px; margin-bottom:18px;
   }
-  .plan h3 { font-size:20px; font-weight:700; margin-bottom:8px; }
-  .plan .desc { color:#6B6459; font-size:14px; margin-bottom:20px; }
-  .plan ul { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; flex-grow:1; }
-  .plan li { font-size:14px; color:#3A362E; display:flex; gap:10px; }
-  .plan li::before { content:'✓'; color:#C1543A; font-weight:700; }
-  .plan .price { font-size:13px; color:#6B6459; margin-bottom:16px; }
+  .plan h3 { font-size:20px; font-weight:700; margin-bottom:9px; }
+  .plan .desc { color:var(--ink-soft); font-size:14px; margin-bottom:22px; }
+  .plan ul { list-style:none; display:flex; flex-direction:column; gap:11px; margin-bottom:30px; flex-grow:1; }
+  .plan li { font-size:14px; color:var(--ink); display:flex; gap:10px; }
+  .plan li::before { content:'✓'; color:var(--amber-deep); font-weight:700; }
+  .plan .price { font-size:13px; color:var(--ink-soft); margin-bottom:18px; }
 
   /* ─── cta final ─── */
-  .cta-final {
-    text-align:center; background:linear-gradient(180deg,#F7F2E8,#EFE7D6);
-    border:1px solid rgba(26,26,24,0.08); border-radius:24px; padding:72px 32px;
+  .cta-final-dark {
+    text-align:center; position:relative; overflow:hidden; isolation:isolate;
+    background:radial-gradient(ellipse 70% 100% at 50% 120%, rgba(217,113,79,.24), transparent 60%), var(--black);
+    border-radius:26px; padding:88px 32px;
   }
-  .cta-final h2 { font-size:34px; font-weight:800; letter-spacing:-0.5px; }
-  .cta-final p { color:#6B6459; margin:16px 0 32px; font-size:16px; }
+  .cta-final-dark h2 { font-family:'Fraunces',serif; font-size:clamp(28px,3.6vw,38px); font-weight:600; letter-spacing:-.5px; color:var(--warm-white); text-wrap:balance; }
+  .cta-final-dark p { color:var(--text-soft); margin:18px 0 34px; font-size:16px; }
 
   /* ─── footer ─── */
-  footer { border-top:1px solid rgba(26,26,24,0.1); padding:40px 0; }
-  footer .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-  footer .brand { font-size:14px; color:#6B6459; }
-  footer .flinks { display:flex; gap:24px; font-size:13px; color:#6B6459; }
-  footer .flinks a:hover { color:#1A1A18; }
+  footer.footer-dark { background:#060504; border-top:1px solid var(--line-dark); padding:44px 0; }
+  footer.footer-dark .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  footer.footer-dark .brand-text { font-size:14px; color:var(--text-soft-2); }
+  footer.footer-dark .flinks { display:flex; gap:26px; font-size:13px; color:var(--text-soft); }
+  footer.footer-dark .flinks a:hover { color:var(--warm-white); }
 
   /* ─── trust bar ─── */
-  .trust-bar { background:#E9E1D0; border-top:1px solid rgba(26,26,24,0.08); border-bottom:1px solid rgba(26,26,24,0.08); padding:22px 0; }
-  .trust-bar .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:14px 32px; }
-  .trust-item { display:flex; align-items:center; gap:8px; font-size:14px; color:#3A362E; font-weight:600; }
-  .trust-item .dot { width:8px; height:8px; border-radius:50%; background:#C1543A; flex-shrink:0; }
-
-  /* ─── steps (como funciona) ─── */
-  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-  @media (max-width:820px){ .steps{ grid-template-columns:1fr; } }
-  .step { text-align:center; position:relative; }
-  .step .num {
-    width:48px; height:48px; border-radius:50%; background:#C1543A; color:#FBF6EC;
-    font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center;
-    margin:0 auto 16px;
-  }
-  .step h4 { font-size:15px; font-weight:700; margin-bottom:6px; }
-  .step p { color:#6B6459; font-size:13px; }
-  .step-arrow { position:absolute; top:24px; right:-26px; color:#C1543A66; font-size:20px; }
-  @media (max-width:820px){ .step-arrow{ display:none; } }
-
-  /* ─── depoimentos placeholder ─── */
-  .testi-card { background:#F7F2E8; border:1px solid rgba(26,26,24,0.08); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px; }
-  .testi-quote { color:#3A362E; font-size:14px; font-style:italic; }
-  .testi-who { display:flex; align-items:center; gap:12px; }
-  .testi-avatar { width:38px; height:38px; border-radius:50%; background:#C1543A22; color:#A8432E; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .testi-name { font-size:13px; font-weight:700; }
-  .testi-role { font-size:12px; color:#6B6459; }
+  .trust-bar { background:var(--ivory-alt); border-top:1px solid var(--line-light); border-bottom:1px solid var(--line-light); padding:24px 0; }
+  .trust-bar .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:16px 36px; }
+  .trust-item { display:flex; align-items:center; gap:9px; font-size:14px; color:var(--ink); font-weight:600; }
+  .trust-item .dot { width:7px; height:7px; border-radius:50%; background:var(--amber-deep); flex-shrink:0; }
 
   /* ─── faq ─── */
-  .faq-item { border-bottom:1px solid rgba(26,26,24,0.1); padding:18px 0; }
+  .faq-item { border-bottom:1px solid var(--line-light); padding:20px 0; }
   .faq-item summary { cursor:pointer; font-weight:600; font-size:15px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; }
   .faq-item summary::-webkit-details-marker{ display:none; }
-  .faq-item summary::after { content:'+'; color:#C1543A; font-size:20px; font-weight:700; flex-shrink:0; }
+  .faq-item summary::after { content:'+'; color:var(--amber-deep); font-size:20px; font-weight:700; flex-shrink:0; }
   .faq-item[open] summary::after { content:'−'; }
-  .faq-item p { color:#6B6459; font-size:14px; margin-top:12px; }
+  .faq-item p { color:var(--ink-soft); font-size:14px; margin-top:13px; }
 
-  /* ─── cta repetido ─── */
-  .cta-mid { text-align:center; padding-top:44px; }
+  .cta-mid { text-align:center; padding-top:48px; }
+
+  /* ─── reveal on scroll ─── */
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity:1; transform:translateY(0); }
 
   /* ─── whatsapp float ─── */
   .wa-float {
-    position:fixed; bottom:24px; right:24px; z-index:100;
+    position:fixed; bottom:26px; right:26px; z-index:100;
     width:58px; height:58px; border-radius:50%;
-    background:#25D366; display:flex; align-items:center; justify-content:center;
-    box-shadow:0 4px 20px rgba(26,26,24,0.25); font-size:28px;
+    background:radial-gradient(circle at 32% 28%, #1E3B2E, #0B1712 72%);
+    border:1px solid rgba(245,240,230,.12);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.4);
+    color:#F2F0EA; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .wa-float svg { width:26px; height:26px; position:relative; z-index:1; }
+  .wa-float::before {
+    content:''; position:absolute; inset:-6px; border-radius:50%;
+    background:radial-gradient(circle, rgba(37,211,102,.28), transparent 70%);
+    animation:waPulse 3.2s ease-in-out infinite;
+  }
+  .wa-float:hover { transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.48), 0 0 0 1px rgba(37,211,102,.3); }
+  @keyframes waPulse { 0%,100%{ opacity:.55; transform:scale(1); } 50%{ opacity:.9; transform:scale(1.08); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .beam-sweep, .beam-rays, .beam-glow, .lamp-glow, .stars, .wa-float::before { animation:none !important; }
+    .reveal { transition:opacity .3s ease; transform:none !important; }
+    .card, .nicho-card, .testi-card, .btn { transition:none !important; }
   }
 </style>
 </head>
@@ -200,31 +385,76 @@
 
 <header>
   <nav class="wrap">
-    <div class="brand">
-      <img src="identidade/logo.svg" alt="Luma Digital">
-    </div>
+    <a class="wordmark" href="#topo"><span class="main">Luma</span><span class="sub">Digital</span></a>
     <div class="links">
-      <a href="#servicos">Serviços</a>
-      <a href="#por-que">Por que a Luma</a>
+      <a href="#topo">Início</a>
+      <a href="#nichos">Projetos</a>
+      <a href="#metodologia">Processo</a>
       <a href="#planos">Planos</a>
-      <a href="#faq">Dúvidas</a>
       <a href="#contato">Contato</a>
     </div>
-    <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <a class="btn btn-sm" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar no WhatsApp</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="glow"></div>
-  <div class="wrap" style="position:relative;">
-    <span class="eyebrow">Presença digital para negócios locais</span>
-    <h1>Seu negócio existe.<br><span class="accent">Mas seus clientes sabem disso?</span></h1>
-    <p class="sub">A Luma Digital cria o site que faz seu negócio aparecer no Google e passar credibilidade — rápido, sério e acessível.</p>
+<section class="hero-dark" id="hero">
+  <div class="fog" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="farol-scene" aria-hidden="true">
+    <div class="horizon"></div>
+    <div class="farol-wrap" id="farolWrap">
+      <div class="beam-glow"></div>
+      <div class="cursor-halo" id="cursorHalo"></div>
+      <div class="beam-rays"></div>
+      <div class="beam-sweep"></div>
+      <div class="lamp-glow"></div>
+      <svg viewBox="0 0 60 84" class="farol-svg">
+        <defs>
+          <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5C5344"/>
+            <stop offset="45%" stop-color="#DED2B8"/>
+            <stop offset="62%" stop-color="#C3B79C"/>
+            <stop offset="100%" stop-color="#443C30"/>
+          </linearGradient>
+          <linearGradient id="lanternGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#F6C989"/>
+            <stop offset="100%" stop-color="#B5652E"/>
+          </linearGradient>
+          <radialGradient id="lampCore" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFF6E6"/>
+            <stop offset="45%" stop-color="#F0B168"/>
+            <stop offset="100%" stop-color="#B5652E" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#000" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse cx="30" cy="83" rx="20" ry="4" fill="url(#groundShadow)"/>
+        <path d="M15 82 L21 72 L39 72 L45 82 Z" fill="url(#towerGrad)" stroke="#241F18" stroke-width="1"/>
+        <path d="M21 72 C21.5 58 23 44 24 33 L36 33 C37 44 38.5 58 39 72 Z" fill="url(#towerGrad)" stroke="#241F18" stroke-width="1"/>
+        <line x1="22.3" y1="58" x2="37.7" y2="58" stroke="#241F18" stroke-opacity=".4" stroke-width="0.7"/>
+        <line x1="23.4" y1="45" x2="36.6" y2="45" stroke="#241F18" stroke-opacity=".4" stroke-width="0.7"/>
+        <line x1="23" y1="33.4" x2="37" y2="33.4" stroke="#1A1611" stroke-width="1.3"/>
+        <line x1="24" y1="33.4" x2="24" y2="31.6" stroke="#1A1611" stroke-width="0.9"/>
+        <line x1="30" y1="33.4" x2="30" y2="31.6" stroke="#1A1611" stroke-width="0.9"/>
+        <line x1="36" y1="33.4" x2="36" y2="31.6" stroke="#1A1611" stroke-width="0.9"/>
+        <path d="M24 33 L24 20 L30 12 L36 20 L36 33 Z" fill="url(#lanternGrad)" stroke="#2A1B10" stroke-width="1" stroke-linejoin="round"/>
+        <path d="M25.4 30 L25.4 21.3 L28 18.2 L28 30 Z" fill="#FFF6E6" opacity=".16"/>
+        <circle cx="30" cy="25" r="7.5" fill="url(#lampCore)"/>
+        <circle cx="30" cy="25" r="2.2" fill="#FFF6E6"/>
+      </svg>
+    </div>
+  </div>
+  <div class="wrap hero-content">
+    <span class="eyebrow-dark">Presença digital para negócios locais</span>
+    <h1 class="h1-dark">Seu negócio existe.<br><span class="accent-light">Vamos guiá-lo até ele ser visto.</span></h1>
+    <p class="sub-dark">Como um farol: enquanto você cuida do negócio, a Luma garante presença — no Google, no WhatsApp, exatamente onde alguém está procurando por você.</p>
     <div class="ctas">
       <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
-      <a class="btn btn-outline" href="https://www.instagram.com/lumadigitalbr/" target="_blank" rel="noopener">Ver Instagram</a>
+      <a class="btn btn-outline-dark" href="#metodologia">Entender o processo</a>
     </div>
-    <p style="margin-top:20px; font-size:13px; color:#6B6459;">Atendimento 100% remoto — qualquer bairro ou cidade.</p>
+    <p class="hero-note">Atendimento 100% remoto — qualquer bairro ou cidade.</p>
   </div>
 </section>
 
@@ -237,26 +467,73 @@
   </div>
 </div>
 
+<section id="diferenciais">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="tag">Por que construir com a Luma</span>
+      <h2>Presença digital não devia ser improviso</h2>
+      <p>A maioria dos negócios locais monta a presença online aos pedaços — um Instagram aqui, um cartão ali. A Luma constrói isso como uma coisa só.</p>
+    </div>
+  </div>
+  <div class="wrap reveal">
+    <div class="diff-grid">
+      <div class="diff-block">
+        <div class="diff-num">01</div>
+        <h3>Clareza estratégica</h3>
+        <p>Você não precisa entender de marketing. A Luma traduz a realidade do seu negócio em um site que faz sentido pro seu cliente — sem enrolação, sem jargão.</p>
+      </div>
+      <div class="diff-block">
+        <div class="diff-num">02</div>
+        <h3>Presença unificada</h3>
+        <p>Site, Google e WhatsApp funcionando juntos, contando a mesma história. Seu negócio aparece com a mesma cara em qualquer lugar que procurarem por você.</p>
+      </div>
+      <div class="diff-block">
+        <div class="diff-num">03</div>
+        <h3>Parceria de verdade</h3>
+        <p>Não entregamos e sumimos. Acompanhamos o resultado e ajustamos o que for preciso pra continuar trazendo cliente até a sua porta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="servicos">
   <div class="wrap">
-    <div class="section-head">
-      <span class="tag">Serviços</span>
+    <div class="section-head reveal">
+      <span class="tag">O que entregamos</span>
       <h2>O que a Luma Digital entrega</h2>
       <p>Tudo o que um negócio local precisa pra sair do "só Instagram" e virar presença digital de verdade.</p>
     </div>
-    <div class="grid3">
+    <div class="grid3 reveal">
       <div class="card">
-        <div class="icon">💻</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4.5" width="18" height="15" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <circle cx="6.3" cy="6.7" r="0.55" fill="currentColor" stroke="none"/>
+            <circle cx="8.6" cy="6.7" r="0.55" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
         <h3>Site profissional</h3>
         <p>Site rápido, bonito e feito sob medida pro seu negócio — com suas informações, serviços e forma de contato.</p>
       </div>
       <div class="card">
-        <div class="icon">📍</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/>
+            <circle cx="12" cy="9.5" r="2.4"/>
+          </svg>
+        </div>
         <h3>Presença no Google</h3>
         <p>Google Meu Negócio organizado e SEO local, pra aparecer quando alguém procura "perto de mim".</p>
       </div>
       <div class="card">
-        <div class="icon">💬</div>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5.5h16v10.5H9.5L5.5 19v-3H4V5.5Z"/>
+            <line x1="8" y1="9" x2="16" y2="9"/>
+            <line x1="8" y1="12" x2="13.5" y2="12"/>
+          </svg>
+        </div>
         <h3>Atendimento pelo WhatsApp</h3>
         <p>Do orçamento à entrega, tudo direto com você pelo WhatsApp — sem burocracia, sem enrolação.</p>
       </div>
@@ -264,30 +541,25 @@
   </div>
 </section>
 
-<section id="como-funciona">
+<section class="metodologia-dark" id="metodologia">
   <div class="wrap">
-    <div class="section-head">
-      <span class="tag">Como funciona</span>
-      <h2>Do primeiro "oi" ao site no ar</h2>
-    </div>
-    <div class="steps">
+    <p class="metodologia-quote reveal">Acreditamos que presença digital precisa ser <span class="accent">guiada</span>, não improvisada.</p>
+    <p class="metodologia-sub reveal">Do primeiro contato à entrega, um processo claro — sem etapa escondida, sem surpresa no meio do caminho.</p>
+    <div class="steps reveal">
       <div class="step">
         <div class="num">1</div>
         <h4>Você manda mensagem</h4>
         <p>Direto pelo WhatsApp, sem formulário.</p>
-        <span class="step-arrow">→</span>
       </div>
       <div class="step">
         <div class="num">2</div>
         <h4>Entendemos sua necessidade</h4>
         <p>Conversamos sobre seu negócio e objetivo.</p>
-        <span class="step-arrow">→</span>
       </div>
       <div class="step">
         <div class="num">3</div>
         <h4>Enviamos o orçamento</h4>
         <p>Valor fechado, sem letra miúda.</p>
-        <span class="step-arrow">→</span>
       </div>
       <div class="step">
         <div class="num">4</div>
@@ -298,57 +570,13 @@
   </div>
 </section>
 
-<section id="por-que" style="background:#E9E1D0;">
+<section id="prova-social" style="background:var(--ivory-alt);">
   <div class="wrap">
-    <div class="section-head">
-      <span class="tag">Por que a Luma</span>
-      <h2>Feito pra quem não tem tempo de resolver isso sozinho</h2>
-    </div>
-    <div class="grid2" style="margin-bottom:20px;">
-      <div class="card">
-        <div class="check" style="margin-bottom:16px;">✓</div>
-        <h3 style="font-size:16px; margin-bottom:6px;">Preço acessível</h3>
-        <p>Site profissional sem o preço de agência grande.</p>
-      </div>
-      <div class="card">
-        <div class="check" style="margin-bottom:16px;">✓</div>
-        <h3 style="font-size:16px; margin-bottom:6px;">Entrega rápida</h3>
-        <p>Sem projetos que se arrastam por meses.</p>
-      </div>
-      <div class="card">
-        <div class="check" style="margin-bottom:16px;">✓</div>
-        <h3 style="font-size:16px; margin-bottom:6px;">Atendimento direto</h3>
-        <p>Fala com quem faz, pelo WhatsApp, do início ao fim.</p>
-      </div>
-      <div class="card">
-        <div class="check" style="margin-bottom:16px;">✓</div>
-        <h3 style="font-size:16px; margin-bottom:6px;">Resultado visível</h3>
-        <p>Você não compra tecnologia — compra cliente aparecendo na porta.</p>
-      </div>
-    </div>
-    <div class="card" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
-      <h3 style="margin-bottom:16px;">Pra quem é</h3>
-      <div class="nichos">
-        <span class="nicho-pill"><b>Clínicas</b> e consultórios</span>
-        <span class="nicho-pill"><b>Salões</b> e barbearias</span>
-        <span class="nicho-pill"><b>Restaurantes</b> e lanchonetes</span>
-        <span class="nicho-pill"><b>Academias</b> e estúdios</span>
-      </div>
-      <p style="color:#6B6459; font-size:13px; margin-top:20px;">Atendimento remoto — qualquer bairro ou cidade.</p>
-    </div>
-    <div class="cta-mid">
-      <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
-    </div>
-  </div>
-</section>
-
-<section id="prova-social">
-  <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="tag">No Instagram</span>
       <h2>Acompanhe o dia a dia da Luma Digital</h2>
     </div>
-    <div class="social-card">
+    <div class="social-card reveal">
       <div class="social-left">
         <img src="identidade/icone.svg" alt="Luma Digital">
         <div>
@@ -363,12 +591,12 @@
       <a class="btn btn-outline" href="https://www.instagram.com/lumadigitalbr/" target="_blank" rel="noopener">Seguir →</a>
     </div>
 
-    <div class="section-head" style="margin-top:72px;">
+    <div class="section-head reveal" style="margin-top:80px;">
       <span class="tag">Primeiros negócios atendidos pela Luma Digital</span>
       <h2>Quem já confiou na Luma Digital</h2>
       <p>Espaço reservado para depoimentos reais — em breve substituídos pelos primeiros clientes atendidos.</p>
     </div>
-    <div class="grid3">
+    <div class="grid3 reveal">
       <div class="testi-card">
         <p class="testi-quote">"Em poucos dias já tínhamos um site sério, sem precisar entender nada de tecnologia."</p>
         <div class="testi-who">
@@ -394,14 +622,66 @@
   </div>
 </section>
 
-<section id="planos" style="background:#E9E1D0;">
+<section id="nichos">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
+      <span class="tag">Pra quem construímos</span>
+      <h2>Ainda não temos cases pra mostrar</h2>
+      <p>Mas sabemos exatamente quem vamos atender. Os primeiros projetos reais entram aqui assim que fecharem — por enquanto, é pra esses perfis que a Luma Digital foi desenhada.</p>
+    </div>
+    <div class="nicho-grid reveal">
+      <div class="nicho-card" tabindex="0">
+        <div class="nc-inner">
+          <div class="nc-top">
+            <span class="nc-tag">Saúde &amp; bem-estar</span>
+            <span class="nc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="8 6 18 6 18 16"/></svg></span>
+          </div>
+          <div class="nc-title">Clínicas &amp; consultórios</div>
+          <div class="nc-reveal">Agenda cheia sem depender só de indicação.</div>
+        </div>
+      </div>
+      <div class="nicho-card" tabindex="0">
+        <div class="nc-inner">
+          <div class="nc-top">
+            <span class="nc-tag">Beleza &amp; cuidado</span>
+            <span class="nc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="8 6 18 6 18 16"/></svg></span>
+          </div>
+          <div class="nc-title">Salões &amp; barbearias</div>
+          <div class="nc-reveal">Cliente encontra, agenda e chega — sem trocar 10 mensagens.</div>
+        </div>
+      </div>
+      <div class="nicho-card" tabindex="0">
+        <div class="nc-inner">
+          <div class="nc-top">
+            <span class="nc-tag">Gastronomia</span>
+            <span class="nc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="8 6 18 6 18 16"/></svg></span>
+          </div>
+          <div class="nc-title">Restaurantes &amp; lanchonetes</div>
+          <div class="nc-reveal">Cardápio, endereço e pedido a um clique de distância.</div>
+        </div>
+      </div>
+      <div class="nicho-card" tabindex="0">
+        <div class="nc-inner">
+          <div class="nc-top">
+            <span class="nc-tag">Saúde &amp; performance</span>
+            <span class="nc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="18" y2="6"/><polyline points="8 6 18 6 18 16"/></svg></span>
+          </div>
+          <div class="nc-title">Academias &amp; estúdios</div>
+          <div class="nc-reveal">Presença que passa confiança antes mesmo da primeira aula.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planos" style="background:var(--ivory-alt);">
+  <div class="wrap">
+    <div class="section-head reveal">
       <span class="tag">Planos</span>
       <h2>Pacotes sob medida</h2>
       <p>Cada negócio tem uma necessidade diferente — o orçamento é fechado depois de entender o que você precisa.</p>
     </div>
-    <div class="grid3">
+    <div class="grid3 reveal">
       <div class="plan">
         <h3>Site Essencial</h3>
         <p class="desc">Pra quem precisa sair do zero e ganhar presença digital rápido.</p>
@@ -437,7 +717,7 @@
         <a class="btn btn-outline" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Site%20%2B%20Presen%C3%A7a%20Google." target="_blank" rel="noopener">Solicitar orçamento</a>
       </div>
     </div>
-    <div class="cta-mid">
+    <div class="cta-mid reveal">
       <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento no WhatsApp →</a>
     </div>
   </div>
@@ -445,36 +725,38 @@
 
 <section id="faq">
   <div class="wrap" style="max-width:760px;">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="tag">Perguntas frequentes</span>
       <h2>Antes de mandar mensagem</h2>
     </div>
-    <details class="faq-item">
-      <summary>Quanto tempo demora?</summary>
-      <p>Depende do plano, mas a entrega é rápida — sem projetos que se arrastam por meses.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Preciso entender de tecnologia?</summary>
-      <p>Não. Você fala com quem faz, pelo WhatsApp, e cuida do resto.</p>
-    </details>
-    <details class="faq-item">
-      <summary>O orçamento é fechado antes ou depois?</summary>
-      <p>Antes. Você recebe o valor fechado depois de entendermos sua necessidade — sem surpresa na entrega.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Vocês cuidam do Google Meu Negócio também?</summary>
-      <p>Sim, nos planos que incluem presença no Google — deixamos seu perfil otimizado pra aparecer nas buscas locais.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Atendem qualquer bairro ou cidade?</summary>
-      <p>Sim. O atendimento é 100% remoto pelo WhatsApp — funciona pra negócio local em qualquer lugar do Brasil.</p>
-    </details>
+    <div class="reveal">
+      <details class="faq-item">
+        <summary>Quanto tempo demora?</summary>
+        <p>Depende do plano, mas a entrega é rápida — sem projetos que se arrastam por meses.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso entender de tecnologia?</summary>
+        <p>Não. Você fala com quem faz, pelo WhatsApp, e cuida do resto.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O orçamento é fechado antes ou depois?</summary>
+        <p>Antes. Você recebe o valor fechado depois de entendermos sua necessidade — sem surpresa na entrega.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês cuidam do Google Meu Negócio também?</summary>
+        <p>Sim, nos planos que incluem presença no Google — deixamos seu perfil otimizado pra aparecer nas buscas locais.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Atendem qualquer bairro ou cidade?</summary>
+        <p>Sim. O atendimento é 100% remoto pelo WhatsApp — funciona pra negócio local em qualquer lugar do Brasil.</p>
+      </details>
+    </div>
   </div>
 </section>
 
 <section id="contato">
   <div class="wrap">
-    <div class="cta-final">
+    <div class="cta-final-dark">
       <h2>Seu negócio merece estar<br>online de verdade.</h2>
       <p>Manda uma mensagem agora e recebe seu orçamento direto no WhatsApp.</p>
       <a class="btn" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar com a Luma Digital →</a>
@@ -482,9 +764,9 @@
   </div>
 </section>
 
-<footer>
+<footer class="footer-dark">
   <div class="wrap">
-    <div class="brand">© <span id="year"></span> Luma Digital. Presença · Resultado.</div>
+    <div class="brand-text">© <span id="year"></span> Luma Digital. Presença · Resultado.</div>
     <div class="flinks">
       <a href="https://www.instagram.com/lumadigitalbr/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://wa.me/5521999101189" target="_blank" rel="noopener">WhatsApp</a>
@@ -492,8 +774,41 @@
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">📱</a>
+<a class="wa-float" href="https://wa.me/5521999101189?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Luma%20Digital%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.58 4.35 1.68 6.24L3.5 28.5l6.46-1.69a12.44 12.44 0 0 0 6.08 1.55h.01c6.9 0 12.5-5.6 12.5-12.5S22.95 3.5 16.04 3.5Zm0 22.86h-.01a10.35 10.35 0 0 1-5.28-1.45l-.38-.22-3.93 1.03 1.05-3.83-.25-.4a10.28 10.28 0 0 1-1.58-5.49c0-5.7 4.64-10.34 10.35-10.34 2.76 0 5.36 1.08 7.31 3.03a10.27 10.27 0 0 1 3.03 7.31c0 5.7-4.64 10.36-10.31 10.36Zm5.66-7.75c-.31-.16-1.83-.9-2.11-1s-.49-.16-.69.16-.79 1-.97 1.2-.36.24-.67.08a8.47 8.47 0 0 1-2.49-1.54 9.3 9.3 0 0 1-1.72-2.14c-.18-.31 0-.47.14-.63.14-.14.31-.36.47-.55.16-.18.21-.31.31-.52.1-.21.05-.39-.02-.55-.08-.16-.69-1.67-.95-2.28-.25-.6-.5-.52-.69-.53h-.59a1.13 1.13 0 0 0-.82.39 3.44 3.44 0 0 0-1.08 2.56c0 1.51 1.1 2.97 1.26 3.17.16.21 2.17 3.32 5.27 4.65.74.32 1.31.51 1.76.65.74.24 1.41.2 1.94.12.59-.09 1.83-.75 2.09-1.47.26-.73.26-1.35.18-1.47-.08-.13-.28-.2-.59-.35Z"/></svg>
+</a>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* halo sutil que reage à proximidade do cursor, sem interferir na rotação do farol */
+(function(){
+  var hero = document.getElementById('hero');
+  var wrap = document.getElementById('farolWrap');
+  var halo = document.getElementById('cursorHalo');
+  if (!hero || !wrap || !halo) return;
+  hero.addEventListener('mousemove', function(e){
+    var rect = wrap.getBoundingClientRect();
+    var lampX = rect.left + rect.width * 0.5;
+    var lampY = rect.top + rect.height * 0.2976;
+    var dist = Math.hypot(e.clientX - lampX, e.clientY - lampY);
+    var proximity = Math.max(0, 1 - dist / (hero.offsetWidth * 0.55));
+    halo.style.opacity = (proximity * 0.9).toFixed(2);
+  }, { passive:true });
+  hero.addEventListener('mouseleave', function(){ halo.style.opacity = 0; });
+})();
+
+/* ─── reveal on scroll ─── */
+(function(){
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

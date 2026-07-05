@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --black:#0A0908;
+    --graphite:#17130E;
+    --ivory:#F3ECDD;
+    --card-light:#FBF7EE;
+    --ink:#17130F;
+    --ink-soft:#6E6656;
+    --warm-white:#F5F0E6;
+    --text-soft:#BAAF9C;
+    --amber-bright:#F0B168;
+    --amber:#D9714F;
+    --amber-deep:#C1543A;
+    --amber-copper:#93502A;
+  }
+  body { font-family:'Inter',sans-serif; }
+  .slide {
+    width:1080px; height:1350px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; padding:90px;
+  }
+  .wordmark { display:flex; align-items:baseline; gap:12px; }
+  .wordmark .main { font-family:'Fraunces',serif; font-weight:600; font-size:36px; letter-spacing:-.3px; }
+  .wordmark .sub { font-weight:600; font-size:15px; letter-spacing:5px; text-transform:uppercase; }
+  .eyebrow { font-size:22px; font-weight:800; text-transform:uppercase; letter-spacing:.3em; }
+  .rule { width:80px; height:4px; margin:44px 0; }
+  .handle { font-size:26px; font-weight:600; }
+  .footer-row { margin-top:auto; display:flex; justify-content:space-between; align-items:center; padding-top:44px; }
+
+  /* ── POST 1 — O TESTE (preto, tipografia gigante) ── */
+  .p1 { background:radial-gradient(ellipse 90% 60% at 50% 0%, #1C170F 0%, var(--black) 65%); color:var(--warm-white); }
+  .p1 .wordmark .main { color:var(--warm-white); }
+  .p1 .wordmark .sub { color:var(--text-soft); }
+  .p1 .eyebrow { color:var(--amber-bright); margin-top:150px; }
+  .p1 h1 { font-family:'Fraunces',serif; font-weight:700; font-size:112px; line-height:1.08; letter-spacing:-2px; margin-top:40px; }
+  .p1 h1 em { font-style:italic; color:var(--amber-bright); }
+  .p1 .sup { font-size:32px; color:var(--text-soft); margin-top:56px; max-width:760px; line-height:1.5; }
+  .p1 .footer-row { border-top:1px solid rgba(245,240,230,.14); }
+  .p1 .handle { color:var(--text-soft); }
+  .p1 .arrow { color:var(--amber-bright); font-size:26px; font-weight:700; }
+
+  /* ── POST 2 — A BUSCA (grafite, mockup de pesquisa) ── */
+  .p2 { background:linear-gradient(170deg, #1D1710 0%, var(--black) 75%); color:var(--warm-white); }
+  .p2 .wordmark .main { color:var(--warm-white); }
+  .p2 .wordmark .sub { color:var(--text-soft); }
+  .p2 .search-zone { margin-top:170px; }
+  .p2 .search-bar {
+    background:#FDFBF6; border-radius:60px; padding:38px 52px;
+    display:flex; align-items:center; gap:28px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(240,177,104,.25), 0 0 90px rgba(240,177,104,.12);
+  }
+  .p2 .search-bar svg { width:44px; height:44px; flex-shrink:0; }
+  .p2 .search-bar .q { font-size:40px; color:#1F1B15; font-weight:500; }
+  .p2 .search-bar .cursor { display:inline-block; width:3px; height:44px; background:#1F1B15; margin-left:6px; vertical-align:middle; }
+  .p2 .under { font-size:26px; color:var(--text-soft); margin:36px 0 0 52px; letter-spacing:.02em; }
+  .p2 h1 { font-family:'Fraunces',serif; font-weight:700; font-size:88px; line-height:1.12; letter-spacing:-1.5px; margin-top:130px; }
+  .p2 h1 em { font-style:italic; color:var(--amber-bright); }
+  .p2 .footer-row { border-top:1px solid rgba(245,240,230,.14); }
+  .p2 .handle { color:var(--text-soft); }
+  .p2 .arrow { color:var(--amber-bright); font-size:26px; font-weight:700; }
+
+  /* ── POST 3 — A VERDADE (marfim, editorial) ── */
+  .p3 { background:var(--ivory); color:var(--ink); }
+  .p3 .wordmark .main { color:var(--ink); }
+  .p3 .wordmark .sub { color:var(--ink-soft); }
+  .p3 .eyebrow { color:var(--amber-deep); margin-top:170px; }
+  .p3 .rule { background:var(--amber-deep); }
+  .p3 h1 { font-family:'Fraunces',serif; font-weight:600; font-size:104px; line-height:1.12; letter-spacing:-1.5px; }
+  .p3 h1 em { font-style:italic; color:var(--amber-deep); }
+  .p3 .sup { font-size:30px; color:var(--ink-soft); margin-top:52px; max-width:740px; line-height:1.55; }
+  .p3 .footer-row { border-top:1px solid rgba(23,19,15,.14); }
+  .p3 .handle { color:var(--ink-soft); }
+  .p3 .arrow { color:var(--amber-deep); font-size:26px; font-weight:700; }
+  .p3 .quotemark { position:absolute; top:120px; right:70px; font-family:'Fraunces',serif; font-size:420px; line-height:1; color:var(--amber-deep); opacity:.1; }
+
+  /* ── POST 4 — O NÚMERO (preto, numeral gigante) ── */
+  .p4 { background:radial-gradient(ellipse 80% 55% at 50% 100%, #221A10 0%, var(--black) 70%); color:var(--warm-white); }
+  .p4 .wordmark .main { color:var(--warm-white); }
+  .p4 .wordmark .sub { color:var(--text-soft); }
+  .p4 .num {
+    font-family:'Fraunces',serif; font-weight:900; font-size:400px; line-height:.95; letter-spacing:-8px;
+    margin-top:70px;
+    background:linear-gradient(160deg, var(--amber-bright) 10%, var(--amber) 55%, var(--amber-copper) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .p4 h1 { font-family:'Fraunces',serif; font-weight:600; font-size:66px; line-height:1.18; letter-spacing:-1px; margin-top:40px; max-width:860px; }
+  .p4 .sup { font-size:32px; color:var(--text-soft); margin-top:44px; }
+  .p4 .sup em { color:var(--amber-bright); font-style:normal; font-weight:700; }
+  .p4 .footer-row { border-top:1px solid rgba(245,240,230,.14); }
+  .p4 .handle { color:var(--text-soft); }
+  .p4 .arrow { color:var(--amber-bright); font-size:26px; font-weight:700; }
+
+  /* ── POST 5 — O FAROL (preto cinematográfico, manifesto) ── */
+  .p5 { background:radial-gradient(ellipse 100% 70% at 50% 12%, #1A1510 0%, var(--black) 60%, #050403 100%); color:var(--warm-white); align-items:center; text-align:center; }
+  .p5 .wordmark { justify-content:center; }
+  .p5 .wordmark .main { color:var(--warm-white); }
+  .p5 .wordmark .sub { color:var(--text-soft); }
+  .p5 .farol-zone { position:relative; margin-top:100px; width:340px; height:480px; }
+  .p5 .beam-glow-c {
+    position:absolute; left:50%; top:142px; transform:translate(-50%,-50%);
+    width:820px; height:820px; border-radius:50%;
+    background:radial-gradient(circle, rgba(240,177,104,.5) 0%, rgba(217,113,79,.18) 34%, rgba(217,113,79,.05) 58%, transparent 76%);
+    filter:blur(6px);
+  }
+  .p5 .beam-rays-c {
+    position:absolute; left:50%; top:142px; transform:translate(-50%,-50%);
+    width:660px; height:660px;
+    background:repeating-conic-gradient(from 0deg, rgba(240,177,104,.3) 0deg 2.5deg, transparent 2.5deg 15deg);
+    -webkit-mask-image:radial-gradient(circle, rgba(0,0,0,.85) 0%, transparent 64%);
+    mask-image:radial-gradient(circle, rgba(0,0,0,.85) 0%, transparent 64%);
+    filter:blur(1px);
+  }
+  .p5 .farol-svg { position:relative; z-index:2; width:340px; height:476px; filter:drop-shadow(0 16px 40px rgba(0,0,0,.6)); }
+  .p5 h1 { font-family:'Fraunces',serif; font-weight:700; font-size:92px; line-height:1.12; letter-spacing:-1.5px; margin-top:70px; }
+  .p5 h1 em { font-style:italic; color:var(--amber-bright); }
+  .p5 .sup { font-size:30px; color:var(--text-soft); margin-top:44px; max-width:720px; line-height:1.55; }
+  .p5 .footer-row { border-top:1px solid rgba(245,240,230,.14); width:100%; justify-content:center; gap:20px; }
+  .p5 .handle { color:var(--amber-bright); font-weight:700; }
+</style>
+</head>
+<body>
+
+<!-- POST 1 — O TESTE -->
+<div class="slide p1">
+  <div class="wordmark"><span class="main">Luma</span><span class="sub">Digital</span></div>
+  <div class="eyebrow">Faz o teste</div>
+  <h1>Pesquisa teu negócio no Google.<br><em>Agora.</em></h1>
+  <p class="sup">Se não aparecer nada — ou pior, aparecer o concorrente — esse perfil é pra você.</p>
+  <div class="footer-row">
+    <span class="handle">@lumadigitalbr</span>
+    <span class="arrow">o resultado diz tudo →</span>
+  </div>
+</div>
+
+<!-- POST 2 — A BUSCA -->
+<div class="slide p2">
+  <div class="wordmark"><span class="main">Luma</span><span class="sub">Digital</span></div>
+  <div class="search-zone">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#93502A" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <span class="q">barbearia perto de mim<span class="cursor"></span></span>
+    </div>
+    <p class="under">Pesquisado agora mesmo, no teu bairro.</p>
+  </div>
+  <h1>Teu cliente procurou.<br><em>Quem ele encontrou?</em></h1>
+  <div class="footer-row">
+    <span class="handle">@lumadigitalbr</span>
+    <span class="arrow">a resposta tá no perfil →</span>
+  </div>
+</div>
+
+<!-- POST 3 — A VERDADE -->
+<div class="slide p3">
+  <div class="quotemark">”</div>
+  <div class="wordmark"><span class="main">Luma</span><span class="sub">Digital</span></div>
+  <div class="eyebrow">A verdade que dói</div>
+  <div class="rule"></div>
+  <h1>Teu concorrente não é melhor que você.<br><em>Ele só aparece.</em></h1>
+  <p class="sup">Qualidade não adianta se ninguém encontra. Visibilidade não é sorte — é estrutura.</p>
+  <div class="footer-row">
+    <span class="handle">@lumadigitalbr</span>
+    <span class="arrow">como aparecer →</span>
+  </div>
+</div>
+
+<!-- POST 4 — O NÚMERO -->
+<div class="slide p4">
+  <div class="wordmark"><span class="main">Luma</span><span class="sub">Digital</span></div>
+  <div class="num">97%</div>
+  <h1>das pessoas pesquisam online antes de escolher um negócio local.</h1>
+  <p class="sup">A pergunta não é se procuram. É <em>se te encontram.</em></p>
+  <div class="footer-row">
+    <span class="handle">@lumadigitalbr</span>
+    <span class="arrow">faz o teste →</span>
+  </div>
+</div>
+
+<!-- POST 5 — O FAROL -->
+<div class="slide p5">
+  <div class="wordmark"><span class="main">Luma</span><span class="sub">Digital</span></div>
+  <div class="farol-zone">
+    <div class="beam-glow-c"></div>
+    <div class="beam-rays-c"></div>
+    <svg viewBox="0 0 60 84" class="farol-svg">
+      <defs>
+        <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#5C5344"/>
+          <stop offset="45%" stop-color="#DED2B8"/>
+          <stop offset="62%" stop-color="#C3B79C"/>
+          <stop offset="100%" stop-color="#443C30"/>
+        </linearGradient>
+        <linearGradient id="lanternGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F6C989"/>
+          <stop offset="100%" stop-color="#B5652E"/>
+        </linearGradient>
+        <radialGradient id="lampCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFF6E6"/>
+          <stop offset="45%" stop-color="#F0B168"/>
+          <stop offset="100%" stop-color="#B5652E" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#000" stop-opacity=".5"/>
+          <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="30" cy="83" rx="20" ry="4" fill="url(#groundShadow)"/>
+      <path d="M15 82 L21 72 L39 72 L45 82 Z" fill="url(#towerGrad)" stroke="#241F18" stroke-width="1"/>
+      <path d="M21 72 C21.5 58 23 44 24 33 L36 33 C37 44 38.5 58 39 72 Z" fill="url(#towerGrad)" stroke="#241F18" stroke-width="1"/>
+      <line x1="22.3" y1="58" x2="37.7" y2="58" stroke="#241F18" stroke-opacity=".4" stroke-width="0.7"/>
+      <line x1="23.4" y1="45" x2="36.6" y2="45" stroke="#241F18" stroke-opacity=".4" stroke-width="0.7"/>
+      <line x1="23" y1="33.4" x2="37" y2="33.4" stroke="#1A1611" stroke-width="1.3"/>
+      <path d="M24 33 L24 20 L30 12 L36 20 L36 33 Z" fill="url(#lanternGrad)" stroke="#2A1B10" stroke-width="1" stroke-linejoin="round"/>
+      <path d="M25.4 30 L25.4 21.3 L28 18.2 L28 30 Z" fill="#FFF6E6" opacity=".16"/>
+      <circle cx="30" cy="25" r="7.5" fill="url(#lampCore)"/>
+      <circle cx="30" cy="25" r="2.2" fill="#FFF6E6"/>
+    </svg>
+  </div>
+  <h1>Enquanto você trabalha,<br><em>a luz fica acesa.</em></h1>
+  <p class="sup">Site + Google + WhatsApp guiando clientes até você. Todo dia. Até de madrugada.</p>
+  <div class="footer-row">
+    <span class="handle">@lumadigitalbr</span>
+  </div>
+</div>
+
+</body>
+</html>

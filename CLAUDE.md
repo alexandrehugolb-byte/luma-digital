@@ -25,6 +25,11 @@ descrito em `estrategia.md`.
 Pra qualquer tarefa visual (carrossel, post, landing page), consultar
 `identidade/design-guide.md` como referência de estilo.
 
+Pra qualquer criação de site (próprio ou de cliente), seguir a metodologia
+em `banco-de-conhecimento/web-designer-instrucoes/fundamentos-vibe-design.md`:
+usar código-fonte de referências reais (não só imagem/prompt solto) e
+extrair um Design System antes de construir a página.
+
 Não é necessário listar o que foi lido nem confirmar a leitura. Apenas
 usar o contexto naturalmente.
 
@@ -107,10 +112,11 @@ inteiro, só adicionar ou editar a linha relevante.
 **Estrutura de pastas:**
 - `_memoria/` — quem é a Luma Digital, como falamos, foco atual
 - `identidade/` — marca da Luma Digital (logo, cores, tipografia)
-- `clientes/` — uma subpasta por cliente, criada via `/novo-projeto` (ainda não existe — sem clientes fechados)
+- `clientes/` — uma subpasta por cliente, criada via `/novo-projeto`
 - `marketing/` — conteúdo institucional da própria Luma Digital
 - `saidas/` — documentos pontuais, análises
 - `dados/` — arquivos a analisar (relatórios, exports)
+- `banco-de-conhecimento/` — metodologias e referências de apoio (ex: `web-designer-instrucoes/` com a metodologia de criação de sites)
 
 ## Sobre a agência
 
